@@ -3,12 +3,12 @@
 const getSerialize = require('json-stringify-safe').getSerialize;
 const debug = require('debug')('collapse-prototypes');
 
-function createContext({
-  stripFunctions,
-  getNonenumerable,
-  dropCycles,
-  debugLabel
-} = {}) {
+function createContext(options = {}) {
+  let stripFunctions = options.stripFunctions;
+  let getNonenumerable = options.getNonenumerable;
+  let dropCycles = options.dropCycles;
+  let debugLabel = options.debugLabel;
+
   function getAllPropertyNames(obj) {
     let allNames = [];
 
