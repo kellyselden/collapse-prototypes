@@ -27,6 +27,7 @@
     "node": ">= 4"
   },
   "dependencies": {
+    "debug": "^2.6.6",
     "json-stringify-safe": "^5.0.1"
   },
   "devDependencies": {
