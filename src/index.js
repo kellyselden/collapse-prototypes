@@ -1,6 +1,6 @@
 'use strict';
 
-const { getSerialize } = require('json-stringify-safe');
+const getSerialize = require('json-stringify-safe').getSerialize;
 const debug = require('debug')('collapse-prototypes');
 
 function createContext({
