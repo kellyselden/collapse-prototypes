@@ -4,7 +4,7 @@
   "description": "Return an object with prototype properties included as own properties (for serialization purposes)",
   "main": "src",
   "scripts": {
-    "test": "eslint-mocha --eslint-args=\"src test\"",
+    "test": "cross-env DEBUG=collapse-prototypes eslint-mocha --eslint-args=\"src test\"",
     "prelint": "eslint --version",
     "lint": "eslint src test",
     "lint:fix": "npm run lint -- --fix"
@@ -35,6 +35,7 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "cross-env": "^5.0.0",
     "eslint": "^3.19.0",
     "eslint-config-sane": "^0.1.0",
     "eslint-mocha": "^0.2.2",
