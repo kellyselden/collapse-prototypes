@@ -3,7 +3,8 @@
 const getSerialize = require('json-stringify-safe').getSerialize;
 const debug = require('debug')('collapse-prototypes');
 
-function createContext(options = {}) {
+function createContext(options) {
+  options = options || {};
   let stripFunctions = options.stripFunctions;
   let getNonenumerable = options.getNonenumerable;
   let dropCycles = options.dropCycles;
@@ -94,6 +95,12 @@ function createContext(options = {}) {
     return newObj;
   }
 
+  let prefix = debugLabel ? `${debugLabel} - ` : '';
+  function log(label, s) {
+    let ms = s * 1000;
+    debug(`${prefix}${label} took ${s.toFixed(9)} seconds (${ms.toFixed(6)} ms)`);
+  }
+
   return function(obj) {
     times.collapse = 0;
     times.serialize = 0;
@@ -106,7 +113,6 @@ function createContext(options = {}) {
 
     let result = time('collapse', () => collapse(obj));
 
-    let log = getLog(debugLabel);
     log('collapse', times.collapse);
     log('serialize', times.serialize);
     log('array', times.array);
@@ -139,15 +145,6 @@ function time(key, func) {
 
 function getSeconds(diff) {
   return diff[0] + diff[1] / 1000000000;
-}
-
-function getLog(debugLabel) {
-  let prefix = debugLabel ? `${debugLabel} - ` : '';
-
-  return function(label, s) {
-    let ms = s * 1000;
-    debug(`${prefix}${label} took ${s.toFixed(9)} seconds (${ms.toFixed(6)} ms)`);
-  };
 }
 
 module.exports = function(obj, options) {
