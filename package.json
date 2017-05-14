@@ -14,6 +14,9 @@
     "url": "git+https://github.com/kellyselden/collapse-prototypes.git"
   },
   "keywords": [
+    "circular",
+    "cyclic",
+    "decycle",
     "flatten",
     "serialize"
   ],
