@@ -120,7 +120,7 @@ describe('Unit', function() {
     //   thirdObj: '[Circular ~.1.thirdObj]'
     // };
 
-    expect(collapse(actual, { getNonenumerable: true, dropCycles: true })).to.deep.equal(expected);
+    expect(collapse(actual, { dropCycles: true })).to.deep.equal(expected);
   });
 
   it('collapse without functions', function() {

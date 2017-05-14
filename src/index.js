@@ -6,7 +6,7 @@ const debug = require('debug')('collapse-prototypes');
 function createContext(options) {
   options = options || {};
   let stripFunctions = options.stripFunctions;
-  let getNonenumerable = options.getNonenumerable;
+  let excludeNonenumerable = options.excludeNonenumerable;
   let dropCycles = options.dropCycles;
   let debugLabel = options.debugLabel;
 
@@ -15,10 +15,10 @@ function createContext(options) {
 
     do {
       let names;
-      if (getNonenumerable) {
-        names = time('ownNames', () => Object.getOwnPropertyNames(obj));
-      } else {
+      if (excludeNonenumerable) {
         names = time('keys', () => Object.keys(obj));
+      } else {
+        names = time('ownNames', () => Object.getOwnPropertyNames(obj));
       }
       allNames = time('concat', () => allNames.concat(names));
       // time('concat', () => {
