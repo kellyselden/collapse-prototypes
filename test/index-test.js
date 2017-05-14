@@ -1,7 +1,7 @@
 'use strict';
 
 const expect = require('chai').expect;
-const collapsePrototypes = require('..');
+const collapse = require('..');
 
 const firstObj = Object.create(null, {
   bar1: {
@@ -120,7 +120,7 @@ describe('Unit', function() {
     //   thirdObj: '[Circular ~.1.thirdObj]'
     // };
 
-    expect(collapsePrototypes(actual, { getNonenumerable: true, dropCycles: true })).to.deep.equal(expected);
+    expect(collapse(actual, { getNonenumerable: true, dropCycles: true })).to.deep.equal(expected);
   });
 
   it('collapse without functions', function() {
@@ -133,7 +133,7 @@ describe('Unit', function() {
     let expected = {
     };
 
-    expect(collapsePrototypes(actual, { stripFunctions: true })).to.deep.equal(expected);
+    expect(collapse(actual, { stripFunctions: true })).to.deep.equal(expected);
   });
 
   it('collapse with functions', function() {
@@ -147,6 +147,6 @@ describe('Unit', function() {
       func
     };
 
-    expect(collapsePrototypes(actual)).to.deep.equal(expected);
+    expect(collapse(actual)).to.deep.equal(expected);
   });
 });
