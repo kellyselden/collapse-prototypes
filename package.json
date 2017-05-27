@@ -34,7 +34,7 @@
     "json-stringify-safe": "^5.0.1"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
+    "chai": "^4.0.0",
     "cross-env": "^5.0.0",
     "eslint": "^3.19.0",
     "eslint-config-sane": "^0.1.0",
