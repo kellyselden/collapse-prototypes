@@ -1,15 +1,14 @@
 'use strict';
 
-const getSerialize = require('json-stringify-safe').getSerialize;
+const { getSerialize } = require('json-stringify-safe');
 const debug = require('debug')('collapse-prototypes');
 
-function createContext(options) {
-  options = options || {};
-  let stripFunctions = options.stripFunctions;
-  let excludeNonenumerable = options.excludeNonenumerable;
-  let dropCycles = options.dropCycles;
-  let debugLabel = options.debugLabel;
-
+function createContext({
+  stripFunctions,
+  excludeNonenumerable,
+  dropCycles,
+  debugLabel
+} = {}) {
   function getAllPropertyNames(obj) {
     let allNames = [];
 
@@ -35,7 +34,7 @@ function createContext(options) {
   let cycleFound;
   let decycler;
   if (!dropCycles) {
-    decycler = function(key, value) {
+    decycler = (key, value) => {
       cycleFound = true;
       return value;
     };
