@@ -10,3 +10,6 @@ branches:
 cache:
   directories:
     - $HOME/.npm
+
+before_install:
+  - npm install -g npm@6
