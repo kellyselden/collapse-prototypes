@@ -3,7 +3,18 @@
     "node": true,
     "es6": true
   },
-  "extends": "sane",
+  "extends": [
+    "sane",
+    "plugin:node/recommended"
+  ],
   "rules": {
-  }
+  },
+  "overrides": [
+    {
+      "files": ["test/**/*.js"],
+      "env": {
+        "mocha": true
+      }
+    }
+  ]
 }
