@@ -100,7 +100,7 @@ function createContext({
     debug(`${prefix}${label} took ${s.toFixed(9)} seconds (${ms.toFixed(6)} ms)`);
   }
 
-  return function(obj) {
+  return obj => {
     times.collapse = 0;
     times.serialize = 0;
     times.array = 0;
@@ -146,6 +146,6 @@ function getSeconds(diff) {
   return diff[0] + diff[1] / 1000000000;
 }
 
-module.exports = function(obj, options) {
+module.exports = (obj, options) => {
   return createContext(options)(obj);
 };
