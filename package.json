@@ -29,6 +29,9 @@
   "engines": {
     "node": ">= 8"
   },
+  "files": [
+    "src"
+  ],
   "dependencies": {
     "debug": "^4.0.0",
     "json-stringify-safe": "^5.0.1"
