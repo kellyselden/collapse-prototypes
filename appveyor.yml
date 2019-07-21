@@ -1,6 +1,6 @@
 environment:
   matrix:
-    - nodejs_version: "6"
+    - nodejs_version: "8"
 
 branches:
   only:
@@ -14,7 +14,6 @@ init:
 # Install scripts. (runs after repo cloning)
 install:
   - ps: Install-Product node $env:nodejs_version
-  - npm install -g npm@6
   - npm install
 
 # Post-install test scripts.

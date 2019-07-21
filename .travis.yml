@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "6"
+  - "8"
 
 branches:
   only:
@@ -10,6 +10,3 @@ branches:
 cache:
   directories:
     - $HOME/.npm
-
-before_install:
-  - npm install -g npm@6
