@@ -4,7 +4,7 @@
     "es6": true
   },
   "extends": [
-    "sane",
+    "sane-node",
     "plugin:node/recommended"
   ],
   "rules": {

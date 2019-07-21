@@ -7,7 +7,7 @@
     "test": "cross-env DEBUG=collapse-prototypes mocha",
     "posttest": "npm run lint",
     "prelint": "eslint --version",
-    "lint": "eslint ."
+    "lint": "eslint . --ext js,json"
   },
   "repository": {
     "type": "git",
@@ -37,7 +37,9 @@
     "chai": "^4.0.0",
     "cross-env": "^5.0.0",
     "eslint": "^6.1.0",
-    "eslint-config-sane": "^0.8.4",
+    "eslint-config-sane": "0.8.4",
+    "eslint-config-sane-node": "0.1.0",
+    "eslint-plugin-json-files": "0.6.2",
     "eslint-plugin-node": "^9.1.0",
     "eslint-plugin-prefer-let": "^1.0.1",
     "mocha": "^6.0.0"
