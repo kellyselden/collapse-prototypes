@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/kellyselden/collapse-prototypes#readme",
   "engines": {
-    "node": ">= 6"
+    "node": ">= 8"
   },
   "dependencies": {
     "debug": "^4.0.0",
