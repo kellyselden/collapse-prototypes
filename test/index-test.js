@@ -1,6 +1,7 @@
 'use strict';
 
-const { expect } = require('chai');
+const { describe } = require('./helpers/mocha');
+const { expect } = require('./helpers/chai');
 const collapse = require('..');
 
 const firstObj = Object.create(null, {
@@ -41,7 +42,7 @@ const thirdObj = Object.create(secondObj, {
 
 secondObj.thirdObj = thirdObj;
 
-describe('Unit', function() {
+describe(function() {
   it('collapse', function() {
     let actual = thirdObj;
 
