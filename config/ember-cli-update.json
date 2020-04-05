@@ -20,7 +20,8 @@
           "options": [
             "--repo-slug=kellyselden/collapse-prototypes",
             "--travis-ci",
-            "--appveyor=ojx0e1dmu7nousgb"
+            "--appveyor=ojx0e1dmu7nousgb",
+            "--renovate"
           ]
         }
       ]
