@@ -1,7 +1,11 @@
 environment:
   matrix:
+<<<<<<< HEAD
     - nodejs_version: "10"
   DEBUG: "collapse-prototypes"
+=======
+    - nodejs_version: "12"
+>>>>>>> bea1cf4... v1.4.5...v2.0.0
 
 branches:
   only:
