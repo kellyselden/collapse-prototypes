@@ -19,7 +19,7 @@
           "name": "@kellyselden/node-template",
           "options": [
             "--repo-slug=kellyselden/collapse-prototypes",
-            "--travis-ci",
+            "--github-actions",
             "--appveyor=ojx0e1dmu7nousgb",
             "--renovate"
           ]
