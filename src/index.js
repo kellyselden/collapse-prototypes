@@ -7,7 +7,7 @@ function createContext({
   stripFunctions,
   excludeNonenumerable,
   dropCycles,
-  debugLabel
+  debugLabel,
 } = {}) {
   function getAllPropertyNames(obj) {
     let allNames = [];
