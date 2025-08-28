@@ -6,38 +6,38 @@ const collapse = require('..');
 
 const firstObj = Object.create(null, {
   bar1: {
-    value: 2
+    value: 2,
   },
   baz1: {
     value: 3,
-    enumerable: true
-  }
+    enumerable: true,
+  },
 });
 
 const secondObj = Object.create(firstObj, {
   bar2: {
-    value: 2
+    value: 2,
   },
   baz2: {
     value: undefined,
-    enumerable: true
+    enumerable: true,
   },
   foo1: {
-    value: firstObj
-  }
+    value: firstObj,
+  },
 });
 
 const thirdObj = Object.create(secondObj, {
   bar3: {
-    value: 'a'
+    value: 'a',
   },
   baz3: {
     value: null,
-    enumerable: true
+    enumerable: true,
   },
   foo2: {
-    value: [firstObj, secondObj]
-  }
+    value: [firstObj, secondObj],
+  },
 });
 
 secondObj.thirdObj = thirdObj;
@@ -55,12 +55,12 @@ describe(function() {
       baz3: null,
       foo1: {
         bar1: 2,
-        baz1: 3
+        baz1: 3,
       },
       foo2: [
         {
           bar1: 2,
-          baz1: 3
+          baz1: 3,
         },
         {
           bar1: 2,
@@ -69,12 +69,12 @@ describe(function() {
           baz2: undefined,
           foo1: {
             bar1: 2,
-            baz1: 3
+            baz1: 3,
           },
-          thirdObj: '[Circular ~.baz3]'
-        }
+          thirdObj: '[Circular ~.baz3]',
+        },
       ],
-      thirdObj: '[Circular ~.baz3]'
+      thirdObj: '[Circular ~.baz3]',
     };
 
     // let expected = {
@@ -145,7 +145,7 @@ describe(function() {
     actual.func = func;
 
     let expected = {
-      func
+      func,
     };
 
     expect(collapse(actual)).to.deep.equal(expected);
